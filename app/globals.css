@@ -605,6 +605,10 @@ img {
   font-size: clamp(2rem, 3vw, 2.8rem);
 }
 
+.cta .eyebrow {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .cta-details h3 {
   margin: 0 0 8px;
   font-family: var(--font-display, "Cormorant Garamond", serif);
