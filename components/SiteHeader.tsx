@@ -67,7 +67,7 @@ export default function SiteHeader() {
       </a>
       <div className="container nav-wrap">
         <Link className="brand" href="/" aria-label="Jacobs Taxes">
-          <img src="/logo.svg" alt="Jacobs Taxes logo" />
+          <img src="/logo.png" alt="Jacobs Taxes logo" />
         </Link>
         <nav className="nav-links" aria-label="Primary">
           {navItems.map((item) => (

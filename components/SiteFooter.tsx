@@ -3,7 +3,7 @@ export default function SiteFooter() {
     <footer className="site-footer">
       <div className="container footer-grid">
         <div>
-          <img src="/logo.svg" alt="Jacobs Taxes" className="footer-logo" />
+          <img src="/logo.png" alt="Jacobs Taxes" className="footer-logo" />
           <p>
             Strategic UK tax advisory for entrepreneurs, owner-managed businesses,
             and internationally mobile individuals.
