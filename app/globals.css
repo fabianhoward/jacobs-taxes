@@ -307,7 +307,7 @@ img {
 }
 
 .portrait {
-  height: 320px;
+  height: 360px;
   border-radius: var(--radius-lg);
   background:
     linear-gradient(135deg, rgba(26, 60, 180, 0.65), rgba(216, 178, 94, 0.75)),
@@ -318,13 +318,13 @@ img {
 
 .portrait img {
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center 0%;
 }
 
 .portrait::after {
   content: "";
   position: absolute;
-  inset: 14px;
+  inset: 10px;
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: var(--radius-md);
 }
@@ -689,7 +689,7 @@ img {
   }
 
   .portrait {
-    height: 260px;
+    height: 300px;
   }
 
   .cta-card {
