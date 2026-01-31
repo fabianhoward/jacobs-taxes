@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Approach",
+  title: "Approach | Jacobs Taxes",
   description:
     "A structured, pragmatic advisory process for UK tax planning, implementation, and ongoing protection.",
 };

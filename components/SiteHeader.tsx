@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const navItems = [
   { href: "/services", label: "Services" },
@@ -14,13 +14,57 @@ const navItems = [
 export default function SiteHeader() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const focusable = menuRef.current?.querySelectorAll<HTMLElement>(
+      "a, button, [tabindex]:not([tabindex='-1'])"
+    );
+    const first = focusable?.[0];
+    const last = focusable?.[focusable.length - 1];
+    first?.focus();
+
+    const handleClick = (event: MouseEvent) => {
+      if (!menuRef.current) return;
+      if (!menuRef.current.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+      }
+      if (event.key === "Tab" && first && last) {
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    document.addEventListener("mousedown", handleClick);
+    document.addEventListener("keydown", handleKey);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+      document.removeEventListener("keydown", handleKey);
+    };
+  }, [menuOpen]);
+
   return (
     <header className="site-header">
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
       <div className="container nav-wrap">
         <Link className="brand" href="/" aria-label="Jacobs Taxes">
           <img src="/logo.svg" alt="Jacobs Taxes logo" />
@@ -31,6 +75,7 @@ export default function SiteHeader() {
               key={item.href}
               href={item.href}
               className={pathname === item.href ? "active" : undefined}
+              aria-current={pathname === item.href ? "page" : undefined}
             >
               {item.label}
             </Link>
@@ -58,12 +103,15 @@ export default function SiteHeader() {
         id="mobile-nav"
         className="mobile-nav"
         data-open={menuOpen ? "true" : "false"}
+        aria-hidden={menuOpen ? "false" : "true"}
+        ref={menuRef}
       >
         {navItems.map((item) => (
           <Link
             key={item.href}
             href={item.href}
             className={pathname === item.href ? "active" : undefined}
+            aria-current={pathname === item.href ? "page" : undefined}
           >
             {item.label}
           </Link>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Strategic UK Tax Advice",
+  title: "Strategic UK Tax Advice | Jacobs Taxes",
   description:
     "Jacobs Taxes provides strategic UK tax advice for owner-managed businesses, entrepreneurs, and internationally mobile individuals.",
 };

@@ -18,10 +18,7 @@ const sora = Sora({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jacobs-taxes.com"),
-  title: {
-    default: "Jacobs Taxes | Strategic UK Tax Advice",
-    template: "%s | Jacobs Taxes",
-  },
+  title: "Jacobs Taxes | Strategic UK Tax Advice",
   description:
     "Jacobs Taxes provides strategic UK tax advice for owner-managed businesses and internationally mobile individuals. Led by Simon Jacobs CTA, ACA.",
   openGraph: {
@@ -62,7 +59,7 @@ export default function RootLayout({
       <body>
         <div className="page-bg" aria-hidden="true" />
         <SiteHeader />
-        <main id="top" className="page-main">
+        <main id="main-content" className="page-main" tabIndex={-1}>
           {children}
         </main>
         <SiteFooter />
