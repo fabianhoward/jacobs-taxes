@@ -72,6 +72,12 @@ img {
   gap: 24px;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .brand img {
   height: 44px;
 }
@@ -86,6 +92,14 @@ img {
 .nav-links a {
   position: relative;
   padding-bottom: 4px;
+}
+
+.nav-links a.active {
+  color: var(--navy);
+}
+
+.nav-links a.active::after {
+  transform: scaleX(1);
 }
 
 .nav-links a::after {
@@ -135,6 +149,49 @@ img {
   color: var(--navy);
   border: 1px solid rgba(10, 26, 60, 0.2);
   box-shadow: none;
+}
+
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(10, 26, 60, 0.15);
+  background: white;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 999px;
+}
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0 5vw 20px;
+  border-bottom: 1px solid rgba(16, 22, 42, 0.08);
+  background: rgba(253, 251, 247, 0.96);
+  backdrop-filter: blur(18px);
+}
+
+.mobile-nav[data-open="true"] {
+  display: flex;
+}
+
+.mobile-nav a {
+  font-size: 1.05rem;
+}
+
+.mobile-nav a.active {
+  color: var(--cobalt);
 }
 
 .hero {
@@ -586,6 +643,10 @@ img {
 @media (max-width: 860px) {
   .nav-links {
     display: none;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
   }
 
   .site-header {

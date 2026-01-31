@@ -1,0 +1,7 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Jacobs Taxes icon">
+  <rect width="512" height="512" rx="120" fill="#0a1a3c" />
+  <path d="M96 330C164 250 260 240 330 300C390 350 440 360 476 320" stroke="#d8b25e" stroke-width="10" fill="none" opacity="0.85" />
+  <text x="120" y="300" fill="#ffffff" font-family="Cormorant Garamond, serif" font-size="140" font-weight="600" letter-spacing="6">
+    JT
+  </text>
+</svg>

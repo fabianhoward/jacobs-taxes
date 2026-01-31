@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Strategic UK Tax Advice",
+  description:
+    "Jacobs Taxes provides strategic UK tax advice for owner-managed businesses, entrepreneurs, and internationally mobile individuals.",
+};
 
 export default function Home() {
   return (

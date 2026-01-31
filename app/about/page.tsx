@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "About Simon Jacobs",
+  description:
+    "Meet Simon Jacobs, a Chartered Tax Adviser (CTA) and Chartered Accountant (ACA) focused on complex UK tax planning.",
+};
 
 export default function AboutPage() {
   return (

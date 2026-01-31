@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description:
+    "Specialist corporate, personal, and international tax services tailored to complex business and individual needs.",
+};
 
 export default function ServicesPage() {
   return (
@@ -86,7 +93,7 @@ export default function ServicesPage() {
               <li>Capital gains tax</li>
               <li>Seed Enterprise Investment Scheme (SEIS)</li>
               <li>IR35 and employment status reviews</li>
-              <li>Entrepreneurs&apos; relief guidance</li>
+              <li>Business Asset Disposal Relief (BADR)</li>
               <li>Personal tax returns</li>
               <li>Cryptocurrency tax reporting</li>
             </ul>

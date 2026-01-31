@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Contact Jacobs Taxes to discuss corporate, personal, or international UK tax planning needs.",
+};
+
 export default function ContactPage() {
   return (
     <>

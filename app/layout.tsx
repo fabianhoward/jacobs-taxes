@@ -17,9 +17,28 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Jacobs Taxes | Strategic UK Tax Advice",
+  metadataBase: new URL("https://jacobs-taxes.com"),
+  title: {
+    default: "Jacobs Taxes | Strategic UK Tax Advice",
+    template: "%s | Jacobs Taxes",
+  },
   description:
     "Jacobs Taxes provides strategic UK tax advice for owner-managed businesses and internationally mobile individuals. Led by Simon Jacobs CTA, ACA.",
+  openGraph: {
+    title: "Jacobs Taxes",
+    description:
+      "Strategic UK tax advice for owner-managed businesses and internationally mobile individuals.",
+    url: "https://jacobs-taxes.com",
+    siteName: "Jacobs Taxes",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jacobs Taxes",
+    description:
+      "Strategic UK tax advice for owner-managed businesses and internationally mobile individuals.",
+  },
 };
 
 export default function RootLayout({
