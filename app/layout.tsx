@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Sora } from "next/font/google";
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -27,7 +29,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${cormorant.variable} ${sora.variable}`}>
-      <body>{children}</body>
+      <body>
+        <div className="page-bg" aria-hidden="true" />
+        <SiteHeader />
+        <main id="top" className="page-main">
+          {children}
+        </main>
+        <SiteFooter />
+      </body>
     </html>
   );
 }
