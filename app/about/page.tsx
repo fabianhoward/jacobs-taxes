@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function AboutPage() {
@@ -18,6 +19,14 @@ export default function AboutPage() {
         <div className="container about-grid">
           <div className="about-card">
             <h2>Professional profile</h2>
+            <div className="profile-photo">
+              <Image
+                src="/images/simon-jacobs.jpg"
+                alt="Simon Jacobs"
+                width={720}
+                height={900}
+              />
+            </div>
             <p>
               Simon combines technical tax expertise with practical commercial insight.
               He supports clients navigating restructures, exits, and cross-border

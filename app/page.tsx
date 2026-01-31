@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -36,12 +37,20 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="hero-visual">
-            <div className="portrait-card">
-              <div className="portrait" />
-              <div className="portrait-meta">
-                <p className="name">Simon Jacobs</p>
-                <p className="role">CTA, ACA | Founder</p>
+            <div className="hero-visual">
+              <div className="portrait-card">
+                <div className="portrait">
+                  <Image
+                    src="/images/simon-jacobs.jpg"
+                    alt="Simon Jacobs"
+                    fill
+                    sizes="(max-width: 768px) 90vw, 360px"
+                    priority
+                  />
+                </div>
+                <div className="portrait-meta">
+                  <p className="name">Simon Jacobs</p>
+                  <p className="role">CTA, ACA | Founder</p>
               </div>
             </div>
             <div className="stat-card">
