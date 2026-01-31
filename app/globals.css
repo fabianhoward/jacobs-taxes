@@ -98,8 +98,7 @@ img {
 
 .brand img {
   height: 42px;
-  border-radius: 8px;
-  border: 1px solid rgba(11, 47, 168, 0.12);
+  border-radius: 10px;
 }
 
 .nav-links {
@@ -642,7 +641,7 @@ img {
 .footer-logo {
   height: 36px;
   margin-bottom: 12px;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .site-footer h4 {
