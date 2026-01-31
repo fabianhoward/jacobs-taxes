@@ -238,7 +238,7 @@ export default function Home() {
             <div>
               <h3>Website</h3>
               <p>
-                <a href="https://www.jacobstaxes.com">www.jacobstaxes.com</a>
+                  <a href="https://jacobs-taxes.com">jacobs-taxes.com</a>
               </p>
             </div>
             <Link className="btn" href="/contact">

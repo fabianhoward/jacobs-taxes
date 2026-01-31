@@ -29,7 +29,7 @@ export default function ContactPage() {
             </p>
             <p>
               <strong>Website:</strong>{" "}
-              <a href="https://www.jacobstaxes.com">www.jacobstaxes.com</a>
+              <a href="https://jacobs-taxes.com">jacobs-taxes.com</a>
             </p>
           </div>
           <div className="list-card">
