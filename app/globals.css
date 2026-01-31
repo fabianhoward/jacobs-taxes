@@ -232,13 +232,18 @@ img {
 }
 
 .portrait {
-  height: 280px;
+  height: 320px;
   border-radius: var(--radius-lg);
   background:
     linear-gradient(135deg, rgba(26, 60, 180, 0.65), rgba(216, 178, 94, 0.75)),
     linear-gradient(90deg, rgba(255, 255, 255, 0.35), transparent);
   position: relative;
   overflow: hidden;
+}
+
+.portrait img {
+  object-fit: cover;
+  object-position: center 15%;
 }
 
 .portrait::after {
@@ -456,6 +461,20 @@ img {
   color: var(--navy);
 }
 
+.profile-photo {
+  margin: 18px 0 20px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(10, 26, 60, 0.08);
+  box-shadow: 0 16px 40px rgba(10, 26, 60, 0.12);
+}
+
+.profile-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .badge-row {
   display: flex;
   flex-wrap: wrap;
@@ -577,6 +596,10 @@ img {
 @media (max-width: 600px) {
   .hero {
     padding-top: 60px;
+  }
+
+  .portrait {
+    height: 260px;
   }
 
   .cta-card {
