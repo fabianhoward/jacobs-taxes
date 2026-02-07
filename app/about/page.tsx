@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { PRIMARY_CTA_HREF, SITE_URL } from "@/lib/publicConfig";
+import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL, SITE_URL } from "@/lib/publicConfig";
 
 export const metadata: Metadata = {
   title: "About Simon Jacobs | Jacobs Taxes",
@@ -115,7 +115,7 @@ export default function AboutPage() {
               </p>
             </div>
             <Link className="btn" href={PRIMARY_CTA_HREF}>
-              Schedule a call
+              {PRIMARY_CTA_LABEL}
             </Link>
           </div>
         </div>

@@ -415,6 +415,10 @@ img {
 
 .section-actions {
   margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
 }
 
 .section-title h2 {
@@ -535,6 +539,11 @@ img {
   gap: 24px;
 }
 
+.stack {
+  display: grid;
+  gap: 24px;
+}
+
 .divider {
   border: 0;
   border-top: 1px solid rgba(10, 26, 60, 0.1);
@@ -550,7 +559,7 @@ img {
 }
 
 .list-card h3 {
-  margin-top: 0;
+  margin: 0 0 12px;
   font-family: var(--font-display, "Cormorant Garamond", serif);
   color: var(--navy);
 }
@@ -558,6 +567,10 @@ img {
 .list-card ul {
   margin: 0;
   padding-left: 18px;
+}
+
+.list-card li + li {
+  margin-top: 10px;
 }
 
 .about-grid {
@@ -826,6 +839,7 @@ img {
   z-index: 40;
   display: none;
   gap: 10px;
+  grid-template-columns: 1fr 1fr;
 }
 
 .mobile-cta__btn {
@@ -881,7 +895,8 @@ img {
   font-size: clamp(2rem, 3vw, 2.8rem);
 }
 
-.cta .eyebrow {
+.cta .eyebrow,
+.cta-card .eyebrow {
   /* Slightly higher contrast on the dark CTA card for legibility. */
   color: rgba(255, 255, 255, 0.92);
   text-shadow: 0 1px 0 rgba(5, 15, 60, 0.35);
@@ -896,14 +911,16 @@ img {
   color: white;
 }
 
-.cta .btn {
+.cta .btn,
+.cta-card .btn {
   background: white;
   color: var(--navy);
   border: 1px solid rgba(255, 255, 255, 0.6);
   box-shadow: 0 16px 32px rgba(5, 15, 60, 0.25);
 }
 
-.cta .btn:hover {
+.cta .btn:hover,
+.cta-card .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 20px 40px rgba(5, 15, 60, 0.32);
 }
@@ -985,7 +1002,8 @@ img {
   }
 
   .page-main {
-    padding-bottom: 72px;
+    /* Leave room for the fixed mobile CTA so it doesn't cover content. */
+    padding-bottom: 120px;
   }
 
   .mini-steps {
@@ -994,6 +1012,7 @@ img {
 
   .mobile-cta {
     display: grid;
+    bottom: calc(12px + env(safe-area-inset-bottom));
   }
 
   .portrait {

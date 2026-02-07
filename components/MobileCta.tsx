@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { trackEvent } from "@/lib/analytics";
-import { CONTACT_TEL_E164, PRIMARY_CTA_HREF } from "@/lib/publicConfig";
+import { CONTACT_TEL_E164, PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/lib/publicConfig";
 
 export default function MobileCta() {
   return (
@@ -19,9 +19,8 @@ export default function MobileCta() {
         href={PRIMARY_CTA_HREF}
         onClick={() => trackEvent("cta_click", { location: "mobile_cta" })}
       >
-        Book
+        {PRIMARY_CTA_LABEL}
       </Link>
     </div>
   );
 }
-

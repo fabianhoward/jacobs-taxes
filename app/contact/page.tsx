@@ -7,6 +7,7 @@ import {
   CONTACT_TEL,
   CONTACT_TEL_E164,
   PRIMARY_CTA_HREF,
+  PRIMARY_CTA_LABEL,
   SCHEDULING_URL,
   SITE_URL,
 } from "@/lib/publicConfig";
@@ -44,7 +45,7 @@ export default function ContactPage() {
             <div className="section-actions">
               {SCHEDULING_URL ? (
                 <Link className="btn" href={PRIMARY_CTA_HREF}>
-                  Book a call
+                  {PRIMARY_CTA_LABEL}
                 </Link>
               ) : (
                 <a className="btn" href="#message">

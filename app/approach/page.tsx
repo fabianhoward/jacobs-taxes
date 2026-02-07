@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PRIMARY_CTA_HREF, SITE_URL } from "@/lib/publicConfig";
+import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL, SITE_URL } from "@/lib/publicConfig";
 
 export const metadata: Metadata = {
   title: "Approach | Jacobs Taxes",
@@ -126,7 +126,7 @@ export default function ApproachPage() {
               </p>
             </div>
             <Link className="btn" href={PRIMARY_CTA_HREF}>
-              Book a call
+              {PRIMARY_CTA_LABEL}
             </Link>
           </div>
         </div>

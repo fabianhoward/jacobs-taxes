@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { CONTACT_EMAIL, CONTACT_TEL, CONTACT_TEL_E164, PRIMARY_CTA_HREF } from "@/lib/publicConfig";
+import {
+  CONTACT_EMAIL,
+  CONTACT_TEL,
+  CONTACT_TEL_E164,
+  PRIMARY_CTA_HREF,
+  PRIMARY_CTA_LABEL,
+} from "@/lib/publicConfig";
 
 export default function SiteFooter() {
   return (
@@ -32,7 +38,7 @@ export default function SiteFooter() {
               className="text-link"
               href={PRIMARY_CTA_HREF}
             >
-              Book a call
+              {PRIMARY_CTA_LABEL}
             </Link>
           </p>
         </div>

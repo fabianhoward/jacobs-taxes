@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Faq from "@/components/Faq";
 import Testimonials from "@/components/Testimonials";
-import { PRIMARY_CTA_HREF, SITE_URL } from "@/lib/publicConfig";
+import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL, SITE_URL } from "@/lib/publicConfig";
 
 export const metadata: Metadata = {
   title: "Strategic UK Tax Advice | Jacobs Taxes",
@@ -27,7 +27,7 @@ export default function Home() {
             </p>
             <div className="hero-actions">
               <Link className="btn" href={PRIMARY_CTA_HREF}>
-                Book a discovery call
+                {PRIMARY_CTA_LABEL}
               </Link>
               <Link className="btn btn-ghost" href="/contact#message">
                 Send a message
@@ -261,7 +261,7 @@ export default function Home() {
           </div>
           <div className="section-actions">
             <Link className="btn" href={PRIMARY_CTA_HREF}>
-              Book a call
+              {PRIMARY_CTA_LABEL}
             </Link>
             <Link className="btn btn-ghost" href="/checklist">
               Use the checklist
@@ -332,11 +332,11 @@ export default function Home() {
             <div>
               <h3>Website</h3>
               <p>
-                  <a href="https://jacobs-taxes.com">jacobs-taxes.com</a>
+                <a href="https://jacobs-taxes.com">jacobs-taxes.com</a>
               </p>
             </div>
             <Link className="btn" href={PRIMARY_CTA_HREF}>
-              Book a call
+              {PRIMARY_CTA_LABEL}
             </Link>
           </div>
         </div>
