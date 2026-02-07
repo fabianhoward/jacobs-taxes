@@ -1,9 +1,21 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import ContactForm from "@/components/ContactForm";
+import Faq from "@/components/Faq";
+import {
+  CONTACT_EMAIL,
+  CONTACT_TEL,
+  CONTACT_TEL_E164,
+  PRIMARY_CTA_HREF,
+  SCHEDULING_URL,
+  SITE_URL,
+} from "@/lib/publicConfig";
 
 export const metadata: Metadata = {
   title: "Contact | Jacobs Taxes",
   description:
     "Contact Jacobs Taxes to discuss corporate, personal, or international UK tax planning needs.",
+  alternates: { canonical: `${SITE_URL}/contact` },
 };
 
 export default function ContactPage() {
@@ -23,24 +35,51 @@ export default function ContactPage() {
       <section className="content-section">
         <div className="container content-grid">
           <div className="list-card">
+            <h3 id="book">Book a call</h3>
+            <p>
+              {SCHEDULING_URL
+                ? "Choose a time that suits you, or send a message if you prefer."
+                : "Send a message and we will respond with a clear next step."}
+            </p>
+            <div className="section-actions">
+              {SCHEDULING_URL ? (
+                <Link className="btn" href={PRIMARY_CTA_HREF}>
+                  Book a call
+                </Link>
+              ) : (
+                <a className="btn" href="#message">
+                  Send a message
+                </a>
+              )}
+              <a className="btn btn-ghost" href={`tel:${CONTACT_TEL_E164}`}>
+                Call
+              </a>
+            </div>
+            <hr className="divider" />
             <h3>Direct contact</h3>
             <p>
               <strong>Email:</strong>{" "}
-              <a href="mailto:simon@jacobs-taxes.com">simon@jacobs-taxes.com</a>
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
             </p>
             <p>
               <strong>Phone:</strong>{" "}
-              <a href="tel:+447821900992">+44 7821 900 992</a>
+              <a href={`tel:${CONTACT_TEL_E164}`}>{CONTACT_TEL}</a>
             </p>
             <p>
               <strong>Location:</strong> London, United Kingdom
             </p>
             <p>
               <strong>Website:</strong>{" "}
-              <a href="https://jacobs-taxes.com">jacobs-taxes.com</a>
+              <a href={SITE_URL}>jacobs-taxes.com</a>
             </p>
           </div>
           <div className="list-card">
+            <h3 id="message">Send a message</h3>
+            <p>
+              Share your priorities and timelines. We will respond with a clear next
+              step and a focused plan.
+            </p>
+            <ContactForm />
             <h3>What to include</h3>
             <ul>
               <li>A short summary of your business or personal situation.</li>
@@ -55,35 +94,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="cta">
-        <div className="container cta-card">
-          <div>
-            <p className="eyebrow">Availability</p>
-            <h2>We accept a limited number of new clients each quarter.</h2>
-            <p>
-              Early conversations help us assess fit and timelines before formal
-              engagement.
-            </p>
-          </div>
-          <div className="cta-details">
-            <div>
-              <h3>Email</h3>
-              <p>
-                <a href="mailto:simon@jacobs-taxes.com">simon@jacobs-taxes.com</a>
-              </p>
-            </div>
-            <div>
-              <h3>Phone</h3>
-              <p>
-                <a href="tel:+447821900992">+44 7821 900 992</a>
-              </p>
-            </div>
-            <a className="btn" href="mailto:simon@jacobs-taxes.com">
-              Book a call
-            </a>
-          </div>
-        </div>
-      </section>
+      <Faq />
     </>
   );
 }

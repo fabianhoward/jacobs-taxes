@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
+import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/lib/publicConfig";
 
 const navItems = [
   { href: "/services", label: "Services" },
@@ -82,9 +84,13 @@ export default function SiteHeader() {
           ))}
         </nav>
         <div className="nav-actions">
-          <a className="btn btn-small" href="mailto:simon@jacobs-taxes.com">
-            Book a call
-          </a>
+          <Link
+            className="btn btn-small"
+            href={PRIMARY_CTA_HREF}
+            onClick={() => trackEvent("cta_click", { location: "header" })}
+          >
+            {PRIMARY_CTA_LABEL}
+          </Link>
           <button
             className="nav-toggle"
             type="button"
@@ -116,9 +122,13 @@ export default function SiteHeader() {
             {item.label}
           </Link>
         ))}
-        <a className="btn" href="mailto:simon@jacobs-taxes.com">
-          Book a call
-        </a>
+        <Link
+          className="btn"
+          href={PRIMARY_CTA_HREF}
+          onClick={() => trackEvent("cta_click", { location: "mobile_nav" })}
+        >
+          {PRIMARY_CTA_LABEL}
+        </Link>
       </div>
     </header>
   );

@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { PRIMARY_CTA_HREF, SITE_URL } from "@/lib/publicConfig";
 
 export const metadata: Metadata = {
   title: "About Simon Jacobs | Jacobs Taxes",
   description:
     "Meet Simon Jacobs, a Chartered Tax Adviser (CTA) and Chartered Accountant (ACA) focused on complex UK tax planning.",
+  alternates: { canonical: `${SITE_URL}/about` },
 };
 
 export default function AboutPage() {
@@ -112,7 +114,7 @@ export default function AboutPage() {
                 <a href="tel:+447821900992">+44 7821 900 992</a>
               </p>
             </div>
-            <Link className="btn" href="/contact">
+            <Link className="btn" href={PRIMARY_CTA_HREF}>
               Schedule a call
             </Link>
           </div>

@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Faq from "@/components/Faq";
+import Testimonials from "@/components/Testimonials";
+import { PRIMARY_CTA_HREF, SITE_URL } from "@/lib/publicConfig";
 
 export const metadata: Metadata = {
   title: "Strategic UK Tax Advice | Jacobs Taxes",
   description:
     "Jacobs Taxes provides strategic UK tax advice for owner-managed businesses, entrepreneurs, and internationally mobile individuals.",
+  alternates: { canonical: SITE_URL },
 };
 
 export default function Home() {
@@ -22,12 +26,26 @@ export default function Home() {
               protect wealth, unlock growth, and keep you ahead of change.
             </p>
             <div className="hero-actions">
-              <a className="btn" href="mailto:simon@jacobs-taxes.com">
-                Schedule a consultation
-              </a>
-              <Link className="btn btn-ghost" href="/services">
-                Explore services
+              <Link className="btn" href={PRIMARY_CTA_HREF}>
+                Book a discovery call
               </Link>
+              <Link className="btn btn-ghost" href="/contact#message">
+                Send a message
+              </Link>
+            </div>
+            <div className="mini-steps" aria-label="How it works">
+              <div>
+                <span>1</span>
+                <p>Discovery call</p>
+              </div>
+              <div>
+                <span>2</span>
+                <p>Clear plan</p>
+              </div>
+              <div>
+                <span>3</span>
+                <p>Implementation support</p>
+              </div>
             </div>
             <div className="trust-row">
               <div>
@@ -68,6 +86,38 @@ export default function Home() {
                 <li>Trusts &amp; estates</li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="why">
+        <div className="container">
+          <div className="section-title">
+            <p className="eyebrow">Why Jacobs Taxes</p>
+            <h2>Technical depth, commercial clarity.</h2>
+          </div>
+          <div className="card-grid">
+            <article className="service-card">
+              <h3>Reduce risk</h3>
+              <p>
+                Identify exposure early and document decisions so structures stand up to
+                scrutiny.
+              </p>
+            </article>
+            <article className="service-card">
+              <h3>Plan for growth</h3>
+              <p>
+                Design efficient structures that support fundraising, hiring, and
+                expansion.
+              </p>
+            </article>
+            <article className="service-card">
+              <h3>Move faster</h3>
+              <p>
+                Clear recommendations, focused deliverables, and close coordination with
+                your advisers.
+              </p>
+            </article>
           </div>
         </div>
       </section>
@@ -131,6 +181,8 @@ export default function Home() {
         </div>
       </section>
 
+      <Testimonials />
+
       <section className="approach">
         <div className="container approach-grid">
           <div>
@@ -179,6 +231,41 @@ export default function Home() {
                 <p>Ongoing monitoring to keep structures aligned with policy change.</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="clients">
+        <div className="container">
+          <div className="section-title">
+            <p className="eyebrow">Who we work with</p>
+            <h2>Built for complex decisions.</h2>
+          </div>
+          <div className="content-grid">
+            <div className="list-card">
+              <h3>Businesses</h3>
+              <ul>
+                <li>Owner-managed businesses with growth plans.</li>
+                <li>Founders preparing for investment or exit.</li>
+                <li>Groups restructuring shareholdings or operations.</li>
+              </ul>
+            </div>
+            <div className="list-card">
+              <h3>Individuals & families</h3>
+              <ul>
+                <li>Internationally mobile individuals and families.</li>
+                <li>Succession and inheritance planning.</li>
+                <li>Clients with complex asset profiles.</li>
+              </ul>
+            </div>
+          </div>
+          <div className="section-actions">
+            <Link className="btn" href={PRIMARY_CTA_HREF}>
+              Book a call
+            </Link>
+            <Link className="btn btn-ghost" href="/checklist">
+              Use the checklist
+            </Link>
           </div>
         </div>
       </section>
@@ -248,12 +335,14 @@ export default function Home() {
                   <a href="https://jacobs-taxes.com">jacobs-taxes.com</a>
               </p>
             </div>
-            <Link className="btn" href="/contact">
+            <Link className="btn" href={PRIMARY_CTA_HREF}>
               Book a call
             </Link>
           </div>
         </div>
       </section>
+
+      <Faq />
     </>
   );
 }

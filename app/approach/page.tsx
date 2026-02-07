@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PRIMARY_CTA_HREF, SITE_URL } from "@/lib/publicConfig";
 
 export const metadata: Metadata = {
   title: "Approach | Jacobs Taxes",
   description:
     "A structured, pragmatic advisory process for UK tax planning, implementation, and ongoing protection.",
+  alternates: { canonical: `${SITE_URL}/approach` },
 };
 
 export default function ApproachPage() {
@@ -123,7 +125,7 @@ export default function ApproachPage() {
                 <a href="tel:+447821900992">+44 7821 900 992</a>
               </p>
             </div>
-            <Link className="btn" href="/contact">
+            <Link className="btn" href={PRIMARY_CTA_HREF}>
               Book a call
             </Link>
           </div>

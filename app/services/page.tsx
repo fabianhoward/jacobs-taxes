@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PRIMARY_CTA_HREF, SITE_URL } from "@/lib/publicConfig";
 
 export const metadata: Metadata = {
   title: "Services | Jacobs Taxes",
   description:
     "Specialist corporate, personal, and international tax services tailored to complex business and individual needs.",
+  alternates: { canonical: `${SITE_URL}/services` },
 };
 
 export default function ServicesPage() {
@@ -124,7 +126,7 @@ export default function ServicesPage() {
                 <a href="tel:+447821900992">+44 7821 900 992</a>
               </p>
             </div>
-            <Link className="btn" href="/contact">
+            <Link className="btn" href={PRIMARY_CTA_HREF}>
               Book a consultation
             </Link>
           </div>
