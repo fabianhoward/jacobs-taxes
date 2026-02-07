@@ -75,6 +75,29 @@ export default function ServicesPage() {
       <section className="content-section">
         <div className="container content-grid">
           <div className="list-card">
+            <h3>Typical engagements</h3>
+            <ul>
+              <li>Structure review with clear, written recommendations.</li>
+              <li>Pre-investment / pre-exit planning and scenario modelling.</li>
+              <li>Residence and international planning briefs for decision-makers.</li>
+              <li>Implementation support with legal and finance teams.</li>
+            </ul>
+          </div>
+          <div className="list-card">
+            <h3>What you can expect</h3>
+            <ul>
+              <li>Defined scope and fees before work begins.</li>
+              <li>Concise outputs designed to drive decisions.</li>
+              <li>Practical, compliant options with trade-offs explained.</li>
+              <li>Fast communication and clear next steps.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="content-section">
+        <div className="container content-grid">
+          <div className="list-card">
             <h3>Corporate tax coverage</h3>
             <ul>
               <li>Corporate tax losses and reliefs</li>
@@ -129,6 +152,9 @@ export default function ServicesPage() {
             <Link className="btn" href={PRIMARY_CTA_HREF}>
               {PRIMARY_CTA_LABEL}
             </Link>
+            <p className="cta-note">
+              Confidential. 15-minute call. Clear next steps within 1 business day.
+            </p>
           </div>
         </div>
       </section>

@@ -68,6 +68,9 @@ export default function ChecklistPage() {
               View services
             </Link>
           </div>
+          <p className="fineprint">
+            Confidential. 15-minute call. Clear next steps within 1 business day.
+          </p>
         </div>
       </section>
     </>

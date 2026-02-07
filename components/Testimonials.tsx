@@ -8,6 +8,9 @@ export default function Testimonials() {
       <div className="container">
         <p className="eyebrow">Client feedback</p>
         <h2>What clients value.</h2>
+        <p className="fineprint">
+          Anonymised examples while published client reviews are collected.
+        </p>
         <div className="testimonials__grid">
           {testimonials.slice(0, 3).map((t) => (
             <figure key={t.quote} className="testimonials__card">

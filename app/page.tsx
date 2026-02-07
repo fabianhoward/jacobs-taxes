@@ -33,6 +33,9 @@ export default function Home() {
                 Send a message
               </Link>
             </div>
+            <p className="fineprint">
+              Confidential. 15-minute call. Clear next steps within 1 business day.
+            </p>
             <div className="mini-steps" aria-label="How it works">
               <div>
                 <span>1</span>
@@ -338,6 +341,9 @@ export default function Home() {
             <Link className="btn" href={PRIMARY_CTA_HREF}>
               {PRIMARY_CTA_LABEL}
             </Link>
+            <p className="cta-note">
+              Confidential. 15-minute call. Clear next steps within 1 business day.
+            </p>
           </div>
         </div>
       </section>

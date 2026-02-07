@@ -56,6 +56,9 @@ export default function ContactPage() {
                 Call
               </a>
             </div>
+            <p className="fineprint">
+              Confidential. 15-minute call. Clear next steps within 1 business day.
+            </p>
             <hr className="divider" />
             <h3>Direct contact</h3>
             <p>

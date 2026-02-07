@@ -128,6 +128,9 @@ export default function ApproachPage() {
             <Link className="btn" href={PRIMARY_CTA_HREF}>
               {PRIMARY_CTA_LABEL}
             </Link>
+            <p className="cta-note">
+              Confidential. 15-minute call. Clear next steps within 1 business day.
+            </p>
           </div>
         </div>
       </section>

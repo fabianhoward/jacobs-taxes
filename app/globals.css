@@ -257,6 +257,12 @@ img {
   color: rgba(16, 22, 42, 0.85);
 }
 
+.fineprint {
+  margin: 10px 0 0;
+  font-size: 0.9rem;
+  color: rgba(16, 22, 42, 0.7);
+}
+
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.18em;
@@ -432,6 +438,12 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
+}
+
+@media (min-width: 960px) {
+  .card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .service-card {
@@ -840,6 +852,16 @@ img {
   display: none;
   gap: 10px;
   grid-template-columns: 1fr 1fr;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.mobile-cta[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .mobile-cta__btn {
@@ -923,6 +945,12 @@ img {
 .cta-card .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 20px 40px rgba(5, 15, 60, 0.32);
+}
+
+.cta-note {
+  margin: 12px 0 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .site-footer {
@@ -1013,6 +1041,10 @@ img {
   .mobile-cta {
     display: grid;
     bottom: calc(12px + env(safe-area-inset-bottom));
+  }
+
+  html[data-mobile-cta="on"] .site-header .nav-actions .btn.btn-small {
+    display: none;
   }
 
   .portrait {
